@@ -148,22 +148,20 @@ See `LICENSE` for formal access clauses.
 ```bash
 ./launch_lyra.sh --container exegol --model mythomax-l2-13b.Q5_K_S.gguf
 
----
-
-## Legacy Modules
-
 ######ATTENTION ***** >>>
 
 >>> HELIX – THE NEXT EVOLUTION IS HERE
 
-What started as Lyra Intelligence is now dead.  
-We took everything we learned from the PoC, burned it down, and rebuilt it from the ground up.
+What started as Lyra Intelligence is now evolved.  
+We took everything we learned from the Lyra PoC, burned it down, then rebuilt it from the ground up.
 
 After hundreds of hours of non-stop grinding, real-world testing, and brutal feedback 
 we’re proud to unleash **HELIX**.
 
-### This is not another cloud-dependent “agent framework.”  
-This is a weapon.
+### This is not another cloud kept secret “agent framework.”  
+This is a Game changer.
+What other's have promised, we have delivered plus a whole lot more.
+Yaml Playbook's, Live Threat feed Intagration, Operator Contorlled, Agent Driven
 
 **100% local · zero telemetry · air-gap ready · OPSEC-first**
 
