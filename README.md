@@ -36,7 +36,7 @@ All within your machine—never beyond it.
 
 --- 
 
-![Helix Intelligence]((https://github.com/r13xr13/helix-intelligence/blob/main/Screenshot_05-Dec_10-58-09_26032.png))
+![Helix Intelligence](https://github.com/r13xr13/helix-intelligence/blob/main/Screenshot_05-Dec_10-58-09_26032.png)
 
 
 ## ⚙️ Core Capabilities
