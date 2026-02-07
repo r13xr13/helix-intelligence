@@ -1,195 +1,140 @@
-# HELIX Intelligence | R13 Systems
+# Sigil7 (formerly HELIX Intelligence)
 
-> Autonomous Cyber Intelligence  
-> Pattern Seeker • Threat Profiler • Sovereign Execution Engine  
+**Sovereign Cyber Intelligence Platform**  
+Local AI-powered threat intelligence and red/blue team automation — fully offline, OPSEC-hardened, containerized.
 
----
+**Built for operators who demand control, precision, and zero external dependencies.**
 
-##  Overview
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Docker Pulls](https://img.shields.io/docker/pulls/yourusername/sigil7.svg?logo=docker)](https://hub.docker.com/r/yourusername/sigil7) <!-- update if you publish -->
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 
-**LYRA** WAS an advanced cyber intelligence platform engineered by **R13 Systems** to empower cybersecurity professionals, red teams, and trusted operators. It is designed to identify, profile, and respond to digital threats with tactical precision capable of both defense and simulated offense within a modular, secure execution zone.
-**HELIX** on the other hand, Developed By c0smic in Partnership with R13 Systems. This is a whole New beast. Fully contained in one Stack
+## Overview
 
-            HELIX INTELLIGENCE
-          Autonomous Cyber Mind
---------------------------------------------------
+Sigil7 is an autonomous, local-first cyber intelligence engine that unifies Kali Linux tools under an AI-driven operator. It reasons, plans, executes tool chains, persists threat knowledge in graphs, generates YAML playbooks, correlates findings with NVD feeds, and produces code/scripts — all without phoning home.
 
-**A Local AI-Powered Threat Intelligence Platform**
-Built for operators who demand sovereignty, precision,  
-and zero external dependencies.
+Key pillars:
+- **100% offline / air-gapped capable** after setup
+- Quantized local LLMs (llama.cpp + models like MythoMax-L2-13B)
+- Full Kali tool integration with safe wrappers & parsing
+- Neo4j graph brain for IOCs, assets, relationships, kill-chains
+- Persistent memory (JSON/YAML + schema validation)
+- YAML-driven playbooks (red team, blue team, OSINT, IR)
+- Private web enrichment via self-hosted SearXNG + MCP
+- Code generation & editing loop (via Zed editor integration)
 
-**Why HELIX?**
-- Offline by design  
-- 145+ integrated tools  
-- Multi-model AI brain  
-- Graph intelligence mapping  
-- Live playbook generation  
-- Persistent memory for campaigns  
-- Full incident-response automation pipeline  
+Designed for red teams, blue teams, incident responders, and bug hunters who want agentic automation without cloud risks or telemetry.
 
-**HELIX Thinks.  
-HELIX Watches.  
-HELIX Correlates.**  
-All within your machine—never beyond it.
+## Features
 
---------------------------------------------------
+- Autonomous OSINT profiling, recon → vuln chaining → report generation
+- Behavioral threat profiling & network persona reconstruction
+- Simulated offensive actions with evasion-aware payloads
+- Live NVD/CVE correlation & attack path suggestion
+- Operator-supervised or fully autonomous modes
+- Secure tool execution (allow-lists, timeouts, no destructive defaults without confirm)
+- Persistent multi-session campaigns that never forget
+- Zed editor integration for AI-assisted exploit/script writing
 
---- 
+## Architecture
+┌─────────────────────────────┐
+│        User / Operator      │
+└───────────────┬─────────────┘
+                │
+                ▼
+┌──────────────────────────────────────┐
+│     Sigil7 Agent Loop                │
+│   (LangGraph / ReAct-style)          │
+└──────────────────────┬───────────────┘
+                       │
+                       ▼
+┌──────────────────────────────────────┐
+│   Multi-Model LLM                    │
+│   (llama.cpp + quantized models)     │
+└───────┬───────────────┬──────────────┘
+        │               │              │
+   ┌────▼──────┐   ┌────▼──────┐   ┌───▼──────┐
+   │ Tool Layer │   │ Memory /  │   │ Intel    │
+   │            │   │   Graph   │   │ Feeds    │
+   │            │   │ (Neo4j +  │   │ (Kali    │
+   │            │   │   JSON)   │   │ wrappers,│
+   │            │   │           │   │ local    │
+   │            │   │           │   │ NVD +    │
+   │            │   │           │   │ SearXNG/ │
+   │            │   │           │   │ MCP)     │
+   └──────┬─────┘   └──────┬────┘   └─────┬────┘
+          │                 │              │
+          └───────────┬─────┴──────────────┘
+                      │
+                      ▼
+         ┌─────────────────────────────┐
+         │     Playbook Engine         │
+         │      (YAML / Jinja)         │
+         └──────────────┬──────────────┘
+                        │
+                        ▼
+               ┌────────────────┐
+               │    Execution   │
+               └────────┬───────┘
+                        │
+                        ▼
+         ┌─────────────────────────────┐
+         │     Report / Code           │
+         └─────────────────────────────┘
 
-![Helix Intelligence](https://github.com/r13xr13/helix-intelligence/blob/main/Screenshot_05-Dec_10-58-09_26032.png)
+## Installation & Quick Start
 
+### Prerequisites
+- Docker & Docker Compose
+- NVIDIA GPU (optional, for faster inference)
+- ~10–15 GB disk space (image + models)
 
-## ⚙️ Core Capabilities
-
-| Capability                | Description                                                                |
-|---------------------------|----------------------------------------------------------------------------|
-|  Threat Profiling       | Behavioral fingerprinting and network persona reconstruction               |
-|  Offensive Simulation   | Simulated intrusions, payload delivery, and evasion profiling              |
-|  LLM Recon Agent        | Uses embedded models to analyze, scan, and generate actionable intelligence|
-|  Roleplay & Simulation  | Synthetic adversary modeling and defense training                          |
-|  Code Generation        | Converts threat insights into scripts, exploits, or reports                |
-|  Modular Interface      | Binds to Exegol, Dockerized stacks, or bare-metal operations               |
-
---- **Future Roadmap**
-
-- Cloud licensed client tier deployment  
-- Autonomous red team evaluation  
-- Encrypted LLM memory store  
-- Image & file parsing capabilities  
-- Real-time darknet scanning agent  
-- Threat identity correlation engine
-
----
-
-## Closing Directive
-
-LYRA is not just a tool. It is a sovereign intelligence construct for those who operate in silence, where threat becomes pattern, and where defense is the art of precision and foresight.
-
-This repository offers only the surface strata.  
-The deeper code lives elsewhere bound, encrypted, awaiting command.
-
-**For trusted operators only.**
-
-> *"Observe. Profile. Execute. Transcend."*  
-> — R13 Systems, Founding Directive
-
---- Check Lyra out in action on Youtube here :
-
-https://youtu.be/o-EXhRs9ylw?si=i1RLvTOentZi4UWy
-
-Reach out to us directly on Mastodon :
-
-https://infosec.exchange/@r13
-
-
-**Licensing & Control**
-
-LYRA is governed by a restricted access model:
-
-- Architecture is public for research & inspection  
-- Core logic and memory modules are proprietary  
-- Full deployment requires a private activation key  
-
-See `LICENSE` for formal access clauses.
-
----
-
-##  Architecture Snapshot
-
-```text
-                   ┌──────────────────────────┐
-                   │     User / Operator      │
-                   └─────────────┬────────────┘
-                                 │
-                                 ▼
-                    ┌──────────────────────┐
-                    │  Multi-Model Engine  │
-                    │ (Reason / Analyze)   │
-                    └─────────┬────────────┘
-                              │
-     ┌────────────────────────┼────────────────────────┐
-     ▼                        ▼                        ▼
- ┌───────────────┐   ┌─────────────────┐     ┌──────────────────────┐
- │   Tool Layer  │   │  Memory System  │     │   Threat Intel Feeds │
- | (145+ tools)  │   │  (JSON + YAML)  │     │   (Local CVE/NVD)    │
- └───────┬───────┘   └─────────┬───────┘     └─────────┬────────────┘
-         │                     │                       │
-         └──────────────┬──────┼───────────┬───────────┘
-                        ▼      ▼           ▼
-              ┌───────────────────────────────────┐
-              │        Graph Intelligence         │
-              │     (relationships, assets,       │
-              │    exposures, kill-chain paths)   │
-              └──────────────────┬────────────────┘
-                                 │
-                                 ▼
-                      ┌──────────────────┐
-                      │  Playbook Engine │
-                      │   (MITRE / IR)   │
-                      └──────────────────┘
-
-## Project Structure (Partial Release)
-
-| Path             | Description                                 |
-|------------------|---------------------------------------------|
-| `/models`        | Local model storage (excluded from repo)    |
-| `/llama.cpp`     | Fast LLM inference backend                  |
-| `/core`          | [REDACTED] Memory, agents, orchestration    |
-| `/scripts`       | Interface, automation, tool wrappers        |
-| `/config`        | Chat templates, system prompts              |
-| `/docs`          | Diagrams, architecture vision               |
-
----
-
-## Launch Example
-
-> This is a **stub demo** only. Full functionality is gated.
+### Docker (recommended)
 
 ```bash
-./launch_lyra.sh --container exegol --model mythomax-l2-13b.Q5_K_S.gguf
+# Clone repo
+git clone https://github.com/r13xr13/helix-intelligence.git sigil7
+cd sigil7
 
-######ATTENTION ***** >>>
+# (Optional) Download models (Mythomax or Qwen) to ./models/
+# Example: wget https://huggingface.co/.../MythoMax-L2-13B.gguf -O models/MythoMax.gguf
 
->>> HELIX – THE NEXT EVOLUTION IS HERE
+# Start (adjust docker-compose.yml for your paths/ports)
+docker compose up -d
 
-What started as Lyra Intelligence is now evolved.  
-We took everything we learned from the Lyra PoC, burned it down, then rebuilt it from the ground up.
+# Enter the main container
+docker exec -it sigil7 bash   # or zsh
 
-After hundreds of hours of non-stop grinding, real-world testing, and brutal feedback 
-we’re proud to unleash **HELIX**.
+Inside the container:
+# Run Sigil7 engine (adjust to your launcher)
+python engine.py --mode supervised --target example.com
+# or your custom entrypoint: ./sigil7.sh --model MythoMax.gguf
 
-### This is not another cloud kept secret “agent framework.”  
-This is a Game changer.
-What other's have promised, we have delivered plus a whole lot more.
-Yaml Playbook's, Live Threat feed Intagration, Operator Contorlled, Agent Driven
+Dev Container (Zed / VS Code)
+•  Open the project folder in Zed or VS Code
+•  Accept the “Reopen in Container” prompt (uses .devcontainer/devcontainer.json)
+•  Zed Agent Panel connects to local llama.cpp + MCP-SearXNG
+Current Status
+This is an early release / work-in-progress. Core engine, tool wrappers, graph integration, and local LLM inference are functional. Full autonomy and advanced playbooks are still being hardened.
+Security note: Tools run in isolated subprocesses with strict allow-lists. Always use authorized targets only. No internet required after initial model/download setup.
+Roadmap (2026)
+•  Full LangGraph orchestration with reflection loops
+•  More curated Kali tool wrappers (top 50+)
+•  Encrypted sensitive memory sections
+•  Better Zed/ACP integration for live code-gen
+•  Community-contributed safe playbooks
+•  Optional darknet/OSINT modules (Tor bridge)
+Contributing
+Contributions welcome — especially:
+•  Safe tool wrappers
+•  Playbook YAML examples
+•  Bug fixes / hardening
+Please open issues/PRs with clear descriptions. Security-related reports → private contact (see SECURITY.md if exists).
+License
+MIT License — see LICENSE file.
+Ethical use only: This tool is for authorized security testing and research. Misuse violates laws and is not condoned.
 
-**100% local · zero telemetry · air-gap ready · OPSEC-first**
-
-### Core Pillars
-- Runs entirely offline with quantized 13B–14B-class models (Mythomax-L2-13B & Qwen3-14B BaronLLM included)
-- Neo4j graph brain that remembers every target, IOC, credential, and lesson forever
-- Persistent JSON memory with schema validation and auto-learning
-- YAML-driven playbooks (red team, blue team, OSINT, IR, compliance – all included)
-- Asynchronous tool daemon with allow-listing, parsing, and automatic graph/memory ingestion
-- Full Kali tool integration (nmap, nuclei, gobuster, sherlock, whois, amass, etc.) – parsed and weaponized instantly
-- Live intel feeds (NVD, static IOCs, custom sources) with dynamic updating
-- Multiple operation modes: autonomous, supervised, production, live console
-- Zero internet required after initial setup – perfect for red cells, classified environments, or just pure paranoia
-
-### What people are already doing with it
-- Full autonomous OSINT profiling in < 15 minutes
-- CVE-driven attack path generation and execution
-- Incident response triage that writes the report for you
-- Persistent, multi-session campaign orchestration that never forgets
-
-This is the system we always wanted but nobody else built.
-
-The PoC got attention.  
-HELIX is going to break the internet.
-
-Welcome to the new era.
-
-
-- `/osint-legacy/`: The OSINT plugin is part of the LYRA ecosystem.  
-  Core agent, orchestration, and memory modules are confidential and not included.
+“Observe. Profile. Execute. Secure.”
+— Sigil7 Directive
+Questions? Reach out on Mastodon: @r13@infosec.exchange
 
