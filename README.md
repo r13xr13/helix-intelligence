@@ -37,50 +37,6 @@ Designed for red teams, blue teams, incident responders, and bug hunters who wan
 - Zed editor integration for AI-assisted exploit/script writing
 
 ## Architecture
-┌─────────────────────────────┐
-│        User / Operator      │
-└───────────────┬─────────────┘
-                │
-                ▼
-┌──────────────────────────────────────┐
-│     Sigil7 Agent Loop                │
-│   (LangGraph / ReAct-style)          │
-└──────────────────────┬───────────────┘
-                       │
-                       ▼
-┌──────────────────────────────────────┐
-│   Multi-Model LLM                    │
-│   (llama.cpp + quantized models)     │
-└───────┬───────────────┬──────────────┘
-        │               │              │
-   ┌────▼──────┐   ┌────▼──────┐   ┌───▼──────┐
-   │ Tool Layer │   │ Memory /  │   │ Intel    │
-   │            │   │   Graph   │   │ Feeds    │
-   │            │   │ (Neo4j +  │   │ (Kali    │
-   │            │   │   JSON)   │   │ wrappers,│
-   │            │   │           │   │ local    │
-   │            │   │           │   │ NVD +    │
-   │            │   │           │   │ SearXNG/ │
-   │            │   │           │   │ MCP)     │
-   └──────┬─────┘   └──────┬────┘   └─────┬────┘
-          │                 │              │
-          └───────────┬─────┴──────────────┘
-                      │
-                      ▼
-         ┌─────────────────────────────┐
-         │     Playbook Engine         │
-         │      (YAML / Jinja)         │
-         └──────────────┬──────────────┘
-                        │
-                        ▼
-               ┌────────────────┐
-               │    Execution   │
-               └────────┬───────┘
-                        │
-                        ▼
-         ┌─────────────────────────────┐
-         │     Report / Code           │
-         └─────────────────────────────┘
 
 ## Installation & Quick Start
 
