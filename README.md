@@ -7,7 +7,7 @@
 **Release Date:** 3/1/26  
 **Runtime:** Docker, Python 3.10+
 
-LocalClaw is a **local-first intelligence platform** designed for security professionals and privacy-conscious users who want full control over their tools, data, and execution environment.
+LocalClaw is a **local-first intelligent platform** designed for security professionals and privacy-conscious users who want full control over their tools, data, and execution environment.
 
 It runs on your machine, uses local models by default, and integrates online capabilities in a way that remains inspectable, controllable, and user-owned.
 
